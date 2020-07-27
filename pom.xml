@@ -16,7 +16,7 @@
 
 	<properties>
 		<java.version>11</java.version>
-		<imageTag>${project.version}</imageTag>
+		<imageTag>${project.version:latest}</imageTag>
 	</properties>
 
 	<dependencies>
