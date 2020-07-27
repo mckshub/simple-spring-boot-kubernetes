@@ -10,12 +10,13 @@
 	</parent>
 	<groupId>com.mcks.spring.kubernetes</groupId>
 	<artifactId>simple-spring-boot-kubernetes</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>simple-spring-boot-kubernetes</name>
 	<description>Demo project for Spring Boot Kubernetes</description>
 
 	<properties>
 		<java.version>11</java.version>
+		<imageTag>${project.version}</imageTag>
 	</properties>
 
 	<dependencies>
@@ -68,7 +69,7 @@
 						-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005
 					</jvmArguments>
 					<image>
-						<name>mckshub/simple-spring-boot-kubernetes:latest</name>
+						<name>mckshub/simple-spring-boot-kubernetes:${imageTag}</name>
 						<env>
 							<BASE_IMAGE>adoptopenjdk:11-jre-hotspot</BASE_IMAGE>
 							<JAR_FILE_NAME>${project.artifactId}-${project.version}</JAR_FILE_NAME>
