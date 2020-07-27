@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  labels:
+    app: spring-boot-kubernetes
+    tier: devops
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: spring-boot-kubernetes
+      tier: devops
+  template:
+    metadata:
+      name: spring-boot-kubernetes
+      labels:
+        app: spring-boot-kubernetes
+        tier: devops
+    spec:
+      containers:
+        - name: spring-boot-kubernetes
+          image: mckshub/simple-spring-boot-kubernetes
+
